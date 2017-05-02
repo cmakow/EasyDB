@@ -27,14 +27,14 @@ module Searchable
 
     result = DBConnection.execute(heredoc, *values)
 
-    className = get_classname(self)
+    class_name = get_class_name(self)
 
-    Relation.new(result.map{ |attrs| className.new(attrs) }, where_string, values)
+    Relation.new(result.map{ |attrs| class_name.new(attrs) }, where_string, values)
   end
 
   private
   # checks if we are calling on a relation or not, fetches correct classname if it is relation
-  def get_classname(object)
+  def get_class_name(object)
     if object.class.to_s == 'Relation'
       return object.collection[0].class
     else
@@ -58,7 +58,7 @@ end
 class Relation include Searchable
   attr_reader :table_name, :collection, :where_string, :values
 
-  def initialize(model_objects, where_string, values)
+  def initialize(model_objects, where_string = nil, values = nil)
     @collection = model_objects
     if @collection[0]
       @table_name = @collection[0].class.table_name
@@ -69,5 +69,9 @@ class Relation include Searchable
 
   def [](index)
     @collection[index]
+  end
+
+  def first
+    @collection[0]
   end
 end

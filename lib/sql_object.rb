@@ -43,12 +43,16 @@ class SQLObject
     parse_all(results)
   end
 
+  def self.first
+    self.all[0]
+  end
+
   def self.parse_all(results)
     result_array = []
     results.each do |result|
       result_array << self.new(result)
     end
-    result_array
+    Relation.new(result_array)
   end
 
   def self.find(id)
