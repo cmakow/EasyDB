@@ -5,8 +5,8 @@ PRINT_QUERIES = ENV['PRINT_QUERIES'] == 'true'
 ROOT_FOLDER = File.join(File.dirname(__FILE__), '..')
 # CATS_SQL_FILE = File.join(ROOT_FOLDER, 'cats.sql')
 # CATS_DB_FILE = File.join(ROOT_FOLDER, 'cats.db')
-TEST_SQL_FILE = File.join(ROOT_FOLDER, 'test_db.sql')
-TEST_DB_FILE = File.join(ROOT_FOLDER, 'dogs_test.db')
+TEST_SQL_FILE = File.join(ROOT_FOLDER, 'dogs_test_sql.sql')
+TEST_DB_FILE = File.join(ROOT_FOLDER, 'dogs_test_db.db')
 
 class DBConnection
   def self.open(db_file_name)
