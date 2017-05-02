@@ -38,6 +38,8 @@ CREATE TABLE dogs (
 
 * This will give access to a number of methods including `Dog#name`, `Dog#name=(new_name)` and `Dog::all`.
 
+* It will also give access to the search method where, which has been set up to return a relation object that allows chaining the where method together (e.g. `Dog.where(owner_id: 3).where(name: 'Buddy')`).
+
 * Another feature is associations, which may be set up as follows:
 
 ```ruby
