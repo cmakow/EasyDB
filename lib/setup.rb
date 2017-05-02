@@ -15,8 +15,6 @@ class Human < SQLObject
 
   has_many :dogs, foreign_key: :owner_id
 
-  has_many :toys, through: :dogs, source: :toys
-
   finalize!
 end
 
