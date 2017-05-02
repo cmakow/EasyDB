@@ -15,9 +15,9 @@ class SQLObject
 
   def self.finalize!
     self.columns.each do |col|
-      self.send(:define_method, col) { self.attributes[col] }
+      self.send(:define_method, col) { self.attributes[col] } # getter methods defined
       accessor = "#{col}="
-      self.send(:define_method, accessor) { |val| self.attributes[col] = val }
+      self.send(:define_method, accessor) { |val| self.attributes[col] = val } # setter methods defined
     end
   end
 
