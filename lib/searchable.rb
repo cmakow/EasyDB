@@ -74,4 +74,12 @@ class Relation include Searchable
   def first
     @collection[0]
   end
+
+  def each(&prc)
+    @collection.length.times do |i|
+      prc.call(@collection[i])
+    end
+
+    @collection
+  end
 end

@@ -1,6 +1,6 @@
-# RubyRM -- A Lightweight Object-Relational Mapping tool for Rails Projects
+# EasyDB -- A Lightweight Object-Relational Mapping tool for Rails Projects
 
-RubyRM is an Object-Relational Mapping tool written in Ruby for Rails projects. It allows users to connect classes to relational database tables with very little configuration. Through the SQLObject class, users can easily connect their rails models to the tables behind them, as well as connecting the models to each other via associations.
+EasyDB is an Object-Relational Mapping tool written in Ruby for Rails projects. It allows users to connect classes to relational database tables with very little configuration. Through the SQLObject class, users can easily connect their rails models to the tables behind them, as well as connecting the models to each other via associations.
 
 ## SQLObject
 
