@@ -10,6 +10,7 @@ User models that extend SQLObject will have access to a number of methods:
 
 - New instances of the model can be initiated with a parameter hash (e.g. `dog = Dog.new(name: 'Buddy', color: 'brown')`). The keys must correspond to columns in the connected database table.
 - Through the searchable module, it allows users to search by any column of the table for a specific value.
+  - Searches can be chained through the relation class, which features all the normal enumerable methods.
 - Allows the creation of associations between models through 'belongs_to' and 'has_many'.
 - Finalize, when called in the model definition, will create attribute accessors for all of the columns in the associated database.
 - Calling save will either update or insert a record based on the presence of an id and thus can be called for both purposes.
@@ -66,6 +67,10 @@ DBConnection.reset
 ```
 
 You're good to go!
+
+## Testing EasyDB
+
+To test how EasyDB works, simply open up pry or any other ruby interactive shell and enter `require_relative 'demo/setup.rb'`. This will create a Dog class, Human class, and Toy class with some seeded data for users to get used to how to use EasyDB. The user can then call the methods mentioned above on the Dog, Human, and Toy classes.
 
 ## Pipeline
 * Package RubyRM as a gem

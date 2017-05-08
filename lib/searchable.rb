@@ -1,6 +1,5 @@
 require_relative 'db_connection'
 require_relative 'sql_object'
-require 'byebug'
 
 module Searchable
   def where(params)
@@ -56,6 +55,7 @@ end
 
 # takes in an array of model objects and extends searchable to allow where to be called on them
 class Relation include Searchable
+  include Enumerable
   attr_reader :table_name, :collection, :where_string, :values
 
   def initialize(model_objects, where_string = nil, values = nil)
